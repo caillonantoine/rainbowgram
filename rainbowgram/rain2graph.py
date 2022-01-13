@@ -36,10 +36,10 @@ def rain2graph(rainbowgram, ax=None, fig=None):
     ax = ax if ax is not None else plt.subplot(1, 1, 1)
 
     # IF color plot
-    arg_im = ax.matshow(rainbowgram[1][::-1, :], cmap="rainbow") # small index should be lower part
+    arg_im = ax.matshow(rainbowgram[1][::-1, :], cmap="rainbow", aspect="auto") # small index should be lower part
     # arg_im = ax.matshow(rainbowgram[1][::-1, :], cmap=mask_cmap_ee) # small index should be lower part
     # mask by magnitude
-    mag_im = ax.matshow(rainbowgram[0][::-1, :], cmap=mask_cmap)
+    mag_im = ax.matshow(rainbowgram[0][::-1, :], cmap=mask_cmap, aspect="auto")
 
     return ax
     # mag_im = ax.matshow(rainbowgram[0][::-1, :], cmap="viridis")
